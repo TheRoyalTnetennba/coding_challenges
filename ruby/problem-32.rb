@@ -5,8 +5,6 @@ end
 
 def pandigital_prods
   products = []
-  multiplier = 1
-  multiplicand = 1
   (1..9999).each do |multiplier|
     (1..99).each do |multiplicand|
       product = multiplier * multiplicand
