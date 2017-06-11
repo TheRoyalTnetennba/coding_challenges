@@ -11,6 +11,3 @@ def palindromic_sum(limit = 1000000)
   end
   palindromic_nums.reduce(:+)
 end
-
-
-p palindromic_sum

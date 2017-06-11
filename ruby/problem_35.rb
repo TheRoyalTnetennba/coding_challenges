@@ -17,5 +17,3 @@ def circular_prime_count(limit = 1000000)
   end
   circular_primes.size
 end
-
-p circular_prime_count

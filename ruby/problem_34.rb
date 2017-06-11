@@ -16,5 +16,3 @@ def digit_factorials
   end
   facts.reduce(:+)
 end
-
-p digit_factorials

@@ -28,5 +28,3 @@ def find_digit_cancelling_fractions
   end
   fraction_product[1] / fraction_product[0]
 end
-
-p find_digit_cancelling_fractions
