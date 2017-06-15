@@ -16,6 +16,3 @@ def even_fib_sum2(n)
   end
   sum
 end
-
-p even_fib_sum(4000000)
-p even_fib_sum2(4000000)
