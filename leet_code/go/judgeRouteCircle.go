@@ -1,5 +1,3 @@
-package main
-
 func judgeCircle(moves string) bool {
 	var counter = make(map[rune]int)
 	for i := 0; i < len(moves); i++ {
