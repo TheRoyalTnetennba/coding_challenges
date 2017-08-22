@@ -47,3 +47,18 @@ func sameSign(a int, b int) (bool, int) {
 	}
 	return false, 0
 }
+
+// for some reason, the following is considered an acceptable answer
+// func getSum(a int, b int) int {
+//     n := a
+//     if b < 0 {
+//         for i := 0; i > b; i-- {
+//             n--
+//         }
+//     } else {
+//         for i := 0; i < b; i++ {
+//             n++
+//         }
+//     }
+//     return n
+// }
