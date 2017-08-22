@@ -1,36 +1,49 @@
+import "math"
+
+// Sum of two integers
+
 func getSum(a int, b int) int {
-	sameSign := addOrNot(a, b)
-	sign := getSign(a, b, sameSign)
-	slice = append(slice, make([]int, a)...)
-	slice = append(slice, make([]int, b)...)
-	if sameSign {
-		var slice []int
-		return len(slice) * sign
-	} else if a < 0 {
-		c := a * -1
+	aa := int(math.Abs(float64(a)))
+	ab := int(math.Abs(float64(b)))
+	same, multiplier := sameSign(a, b)
+	var set []int
+	for i := 0; i < 2*aa; i++ {
+		set = append(set, 0)
 	}
+	for i := 0; i < 2*ab; i++ {
+		set = append(set, 0)
+	}
+	if same {
+		return len(set) * multiplier
+	} else {
+		if aa >= ab {
+			return len(set[ab:aa]) * multiplier
+		} else if aa < ab {
+			return len(set[aa:ab]) * multiplier
+		}
+	}
+	return 7
 }
 
-func addOrNot(a int, b int) bool {
-	if (a >= 0 && b >= 0) || (a < 0 && b < 0) {
-		return true
+func sameSign(a int, b int) (bool, int) {
+	if (a >= 0 && b >= 0) || a < 0 && b < 0 {
+		if a < 0 {
+			return true, 1
+		} else {
+			return true, -1
+		}
+	} else if math.Abs(float64(a)) > math.Abs(float64(b)) {
+		if a >= 0 {
+			return false, 1
+		} else {
+			return false, -1
+		}
+	} else if math.Abs(float64(a)) <= math.Abs(float64(b)) {
+		if b >= 0 {
+			return false, 1
+		} else {
+			return false, -1
+		}
 	}
-	return false
-}
-
-func getSign(a int, b int, sameSign bool) int {
-	if sameSign && a >= 0 {
-		return 1
-	} else if sameSign && a <= 0 {
-		return -1
-	} else if a > b && a >= 0 {
-		return 1
-	} else if a > b && a < 0 {
-		return -1
-	} else if a < b && b >= 0 {
-		return 1
-	} else if a < b && b < 0 {
-		return -1
-	}
-	return 1
+	return false, 0
 }
