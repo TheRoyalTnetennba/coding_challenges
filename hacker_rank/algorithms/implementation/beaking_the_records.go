@@ -5,8 +5,7 @@ import (
 )
 
 func main() {
-	var games, score int
-	lrb, hrb := 0, 0
+	lrb, hrb, games, score := 0, 0, 0, 0
 	fmt.Scanf("%d", &games)
 	fmt.Scanf("%d", &score)
 	lowest, highest := score, score
