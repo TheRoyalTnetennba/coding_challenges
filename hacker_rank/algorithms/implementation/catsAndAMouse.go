@@ -10,6 +10,7 @@ func abs(a int) int {
 }
 
 func main() {
+	// [catA, catB, mouseC]
 	queries, pos := 0, 0
   	query := []int{0,0,0}
 	fmt.Scanf("%d", &queries)
@@ -18,6 +19,13 @@ func main() {
 			fmt.Scanf("%d", &pos)
 			query[j] = pos
 		}
-		a := abs()
+		a, b := abs(query[0] - query[2]), abs(query[1] - query[2])
+		if a > b {
+			fmt.Println("Cat B")
+		} else if a < b {
+			fmt.Println("Cat A")
+		} else {
+			fmt.Println("Mouse C")
+		} 
 	}
 }
