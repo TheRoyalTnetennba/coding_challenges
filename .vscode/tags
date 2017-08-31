@@ -16,6 +16,7 @@ collatz_sequence_length	../project_euler/python/problem14.py	/^def collatz_seque
 counting_sundays	../project_euler/python/problem19.py	/^def counting_sundays():$/;"	kind:function	line:1
 data	../project_euler/python/problem22.py	/^data = response.read()$/;"	kind:variable	line:4
 data	../project_euler/python/problem22.py	/^data = str(data)[1:].replace('"', '').replace("'", '').split(',')$/;"	kind:variable	line:5
+delete_node_in_linked_list.py	../leet_code/python/delete_node_in_linked_list.py	1;"	kind:file	line:1
 diag_sum	../project_euler/python/problem28.py	/^def diag_sum():$/;"	kind:function	line:1
 divisors	../project_euler/python/problem12.py	/^def divisors(n):$/;"	kind:function	line:1
 even_fibonacci_sum	../project_euler/python/problem2.py	/^def even_fibonacci_sum():$/;"	kind:function	line:1
