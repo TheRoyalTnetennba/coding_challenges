@@ -1,52 +1,41 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func isPrime(num int, primes []int) bool {
-	for _, i := range primes {
-		if i >= num {
-			return true
-		} else if num%i == 0 {
+func isPrime(num int) bool {
+	if num < 2 {
+		return false
+	}
+	for i := 2; i < int(math.Sqrt(float64(num))); i++ {
+		if num%i == 0 {
 			return false
 		}
 	}
 	return true
 }
 
-func getPrimes(limit int) []int {
-	primes := []int{2, 3, 5, 7, 11}
-	for i := 13; i <= limit; i++ {
-		if isPrime(i, primes) {
-			primes = append(primes, i)
+func reducio(num int) int {
+	for num%2 == 0 {
+		num /= 2
+	}
+	if num < 3 {
+		return 2
+	}
+	j := 0
+	for i := 3; i <= int(math.Sqrt(float64(num))); i += 2 {
+		j = i
+		for num%i == 0 {
+			num /= i
 		}
 	}
-	return primes
-}
-
-func largestPrimeFactor(primes []int, num int) int {
-	factor, i, done := num, 0, !isPrime(num, primes)
-	for done {
-		if factor%primes[i] == 0 && factor/primes[i] == 1 {
-			return factor
-		}
-		if factor%primes[i] == 0 {
-			factor /= primes[i]
-			done = !isPrime(factor, primes)
-			i = 0
-		}
-		i++
+	if num > 2 {
+		return num
+	} else {
+		return j
 	}
-	return factor
-}
-
-func largestEl(arr []int) int {
-	max := arr[0]
-	for _, el := range arr {
-		if el > max {
-			max = el
-		}
-	}
-	return max
 }
 
 func main() {
@@ -57,14 +46,7 @@ func main() {
 		fmt.Scanf("%d", &target)
 		targets = append(targets, target)
 	}
-	primes := getPrimes(largestEl(targets))
-	answers := make(map[int]int)
-	for _, el := range targets {
-		if val, ok := answers[el]; ok {
-			fmt.Println(val)
-		} else {
-			answers[el] = largestPrimeFactor(primes, el)
-			fmt.Println(answers[el])
-		}
+	for i := range targets {
+		fmt.Println(reducio(targets[i]))
 	}
 }
