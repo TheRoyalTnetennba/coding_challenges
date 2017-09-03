@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+Solution	../leet_code/python/delete_node_in_linked_list.py	/^class Solution(object):$/;"	kind:class	line:1
 adjacents	../project_euler/python/problem8.py	/^def adjacents():$/;"	kind:function	line:1
 amicable_sum	../project_euler/python/problem21.py	/^def amicable_sum(n):$/;"	kind:function	line:13
 answer	../project_euler/python/problem24.py	/^answer = []$/;"	kind:variable	line:11
@@ -16,6 +17,7 @@ collatz_sequence_length	../project_euler/python/problem14.py	/^def collatz_seque
 counting_sundays	../project_euler/python/problem19.py	/^def counting_sundays():$/;"	kind:function	line:1
 data	../project_euler/python/problem22.py	/^data = response.read()$/;"	kind:variable	line:4
 data	../project_euler/python/problem22.py	/^data = str(data)[1:].replace('"', '').replace("'", '').split(',')$/;"	kind:variable	line:5
+deleteNode	../leet_code/python/delete_node_in_linked_list.py	/^    def deleteNode(self, node):$/;"	kind:member	line:2
 delete_node_in_linked_list.py	../leet_code/python/delete_node_in_linked_list.py	1;"	kind:file	line:1
 diag_sum	../project_euler/python/problem28.py	/^def diag_sum():$/;"	kind:function	line:1
 divisors	../project_euler/python/problem12.py	/^def divisors(n):$/;"	kind:function	line:1
