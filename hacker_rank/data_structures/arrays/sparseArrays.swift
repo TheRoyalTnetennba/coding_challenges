@@ -16,6 +16,6 @@ for i in 0..<numQueries {
     if let val = stringsDict[str] {
         print(val)
     } else {
-        sprint(0)
+        print(0)
     }
 }
