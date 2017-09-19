@@ -1,4 +1,4 @@
-def nextMove(n,r,c,grid)
+def nextMove(n, r, c, grid)
   bot = []
   princess = []
   matrix = grid
