@@ -8,5 +8,5 @@ def str_str(haystack, needle)
     i += 1
     n += 1
   end 
-  return -1
+  -1
 end
