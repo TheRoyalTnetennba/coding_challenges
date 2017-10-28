@@ -7,9 +7,7 @@ def is_t(arr)
     end
 end
 
-len = gets.strip.to_i
 s = gets.strip.chars
-largest = 0
 letters = Hash.new(0)
 s.each { |a| letters[a] += 1 }
 max = 0
