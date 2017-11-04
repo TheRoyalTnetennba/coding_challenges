@@ -15,13 +15,18 @@
 #You only need to complete this method.
 
 def InsertNth(head, data, position):
-	linked_list = [head if head else Node(data)]
-	while linked_list[len(linked_list) - 1].next:
-		linked_list.append(linked_list[len(linked_list) - 1].next)
-	new_linked = []
-	for i in range(len(linked_list)):
-		if i == position: new_linked.append(Node(data))
-		else: new_linked.append(linked_list[len(new_linked) - len(linked_list) + i])
-	for i in range(len(new_linked) - 1):
-		new_linked[i].next = new_linked[i+1]
-	return new_linked[0]
+    if not position == 0:
+        _head = head
+        current_position = 1
+        while(position - current_position>0):
+            _head = _head.next
+            current_position+=1
+        if _head.next is None:
+            _head.next = Node(data,None)
+            return head
+        else:
+            prev = _head.next
+            _head.next = Node(data,prev)
+            return head
+    else:
+        return Node(data,head)
