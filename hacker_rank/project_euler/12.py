@@ -10,9 +10,14 @@ def get_next_prime(arr = [2, 3]):
 	while not is_prime(num): num += 2
 	return arr + [num]
 
-def divisors(n):
-	primes = get_next_prime()
-	while primes[len(primes) - 1] < 
+def divisors(n, primes = get_next_prime()):
+	while primes[len(primes) - 1] < int(n** 0.5):
+		primes = get_next_prime()
+	factors = 1 if n == 1 else 2
+
+	for i in primes:
+		if 
+
 
 def triangle_factors(n):
 	attempt = 1
