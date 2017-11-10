@@ -12,26 +12,46 @@ class BSTIterator
   def initialize(root)
     @root = root
     @last = 'r'
-    @vals = root ? [root.val] : []
+    @vals = Hash.new
+    @vals[0] = root ? [root.val] : []
     traverse
+    gen_lvls
   end
 
-  def traverse(root = @root)
+  def traverse(root = @root, lvl = 1)
     return if !root
-    @vals.push(root.left.val) if root.left
-    @vals.push(root.right.val) if root.right
-    traverse(root.left) if root.left
-    traverse(root.right) if root.right
+    @vals[lvl] = []
+    @vals[lvl] << root.left.val if root.left
+    @vals[lvl] << root.right.val if root.right
+    traverse(root.left, lvl + 1) if root.left
+    traverse(root.right, lvl + 1) if root.right
+  end
+
+  def gen_lvls
+    @lvls = []
+    @vals.keys.each do |k|
+      @vals[k].size.times { @lvls << k }
+    end
+  end
+
+  def bottom_left
+    return nil if !root
+    current = root
+    current = current.left while current.left && current.left.val
   end
 
   # @return {Boolean}
   def has_next
-    @vals.size > 0
+    @lvls.size > 0
   end
 
   # @return {Integer}
   def next
-    @vals.pop
+    bl = bottom_left
+    current = bl.right ? bl.right : bl
+    val = current.val
+    current.val = nil
+
   end
 end
 

@@ -29,4 +29,3 @@ class Solution:
 							if int(board[r][c]) > 9: return False
 							used.append(board[r][c])
 		return True
-				
