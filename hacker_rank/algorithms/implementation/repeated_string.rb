@@ -2,7 +2,7 @@
 
 def repeatedString(s, n)
 	if n <= s.size
-		return s.chars[0..n].select { |n| n == 'a' }.size
+		return s.chars[0...n].select { |n| n == 'a' }.size
 	else
 		acount = s.chars.select { |n| n == 'a' }.size * (n / s.size)
 		return acount + s.chars[0...(n % s.size)].select { |n| n == 'a' }.size
