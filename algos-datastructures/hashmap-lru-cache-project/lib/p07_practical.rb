@@ -14,8 +14,5 @@ end
 # because lol
 # def can_string_be_palindrome?(string)
 #   perms = string.chars.permutation.to_a
-#   perms.each do |word|
-#     return true if word == word.reverse
-#   end
-#   return false
+#   perms.any? { |word| word == word.reverse }
 # end
